@@ -4,24 +4,23 @@
 
 **Alexandre**
 
-- Set up Heroku
 - Set up the repo and local files
 - Write README file
+- Create form and basic JS
 
 **Dayvid**
 
 ## Technologies used
 
--PHP
--SQL
--HTML
--CSS
--JSON
--Javascript
+- PHP
+- SQL
+- HTML
+- CSS
+- JSON
+- Javascript
+- jQuery
 
 ## Team members
 
--Ntougas Alexandre
--Astua Dayvid
-
-test
+- Ntougas Alexandre
+- Astua Dayvid
