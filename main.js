@@ -10,7 +10,7 @@ $(function() {
 
     },
     error: function(result, status, error) {
-      $('#message').append('Error : retry later !')
+
     };
   });
 })
