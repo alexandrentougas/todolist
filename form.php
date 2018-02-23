@@ -2,7 +2,6 @@
     <fieldset>
       <legend>Add a task</legend>
       <br>
-      <p id="message"></p>
       <form id="taskForm">
         <label for="task">Task to do : </label>
         <input id="task" type="text" name="task" maxlength="70" size="80">
