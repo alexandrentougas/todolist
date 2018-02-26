@@ -1,45 +1,45 @@
 $(function() {
 
-$(document).ready(function() {
-  $.ajax({
-    url: 'todo.json',
-    type: 'GET',
-    dataType: 'json',
-    complete: function(answer, status) {
-      let tasks = JSON.parse(answer.responseText);
-      displayTasks(tasks);
-    }
-  })
-});
-
-function addEventListenerOnTasks() {
-  $('#list i').on('click', function() {
-    let taskId = $(this).attr('id');
-    let checkStatus;
-    if ($(this).hasClass('fa-square-o')) {
-      checkStatus = 0;
-    } else {
-      checkStatus = 1;
-    };
+  $(document).ready(function() {
     $.ajax({
-      url:'ajax.php',
+      url: 'todo.json',
       type: 'GET',
-      data: 'id=' + taskId + '&checkstatus=' + checkStatus + '&action=update',
-      success: function(answer, status) {
-        let tasks = JSON.parse(answer);
-        $('#error').text(tasks['status']['message']);
-        $('#todo, #done').text('');
-        displayTasks(tasks['todolist']);
-      },
-      error: function(result, status, error) {
-        $('#error').text('Connection error');
+      dataType: 'json',
+      complete: function(answer, status) {
+        let tasks = JSON.parse(answer.responseText);
+        displayTasks(tasks);
       }
-    });
+    })
   });
-};
 
-function getValueAndSendIt() {
-  let task = $('#task').val();
+  function addEventListenerOnTasks() {
+    $('#list i').on('click', function() {
+      let taskId = $(this).attr('id');
+      let checkStatus;
+      if ($(this).hasClass('fa-square-o')) {
+        checkStatus = 0;
+      } else {
+        checkStatus = 1;
+      };
+      $.ajax({
+        url: 'ajax.php',
+        type: 'GET',
+        data: 'id=' + taskId + '&checkstatus=' + checkStatus + '&action=update',
+        success: function(answer, status) {
+          let tasks = JSON.parse(answer);
+          $('#error').text(tasks['status']['message']);
+          $('#todo, #done').text('');
+          displayTasks(tasks['todolist']);
+        },
+        error: function(result, status, error) {
+          $('#error').text('Connection error');
+        }
+      });
+    });
+  };
+
+  function getValueAndSendIt() {
+    let task = $('#task').val();
     $.ajax({
       url: 'ajax.php',
       type: 'POST',
@@ -73,6 +73,8 @@ function getValueAndSendIt() {
     });
     addEventListenerOnTasks();
   };
+
+  dragula([document.querySelector('#todo'), document.querySelector('#done')]);
 
   function displayCharsAndRestrictAdd() {
     let value = document.getElementById('task').value;
