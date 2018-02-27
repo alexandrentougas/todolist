@@ -125,6 +125,7 @@ $(function() {
 
   function addRequestEventListener() {
     document.getElementById('addTask').addEventListener('click', getValueAndSendIt);
+    $('#task').val() = '';
   }
 
   checkEntry();
