@@ -12,9 +12,9 @@
 
 ## Team members
 
-- Ntougas Alexandre[https://github.com/alexandrentougas]
-- Astua Dayvid[https://github.com/DayvidAstua]
+- [Ntougas Alexandre](https://github.com/alexandrentougas)
+- [Astua Dayvid](https://github.com/DayvidAstua)
 
 ### With the help of
 
-- Hulstaert Laurent[https://github.com/laurenthu]
+- [Hulstaert Laurent](https://github.com/laurenthu)
