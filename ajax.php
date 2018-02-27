@@ -14,7 +14,7 @@
       if (filter_var($task, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^.{0,70}$/"))) != false) {
         $taskObject = array('id'=>date_timestamp_get(date_create()),'task'=>$task,'complete'=>$complete);
         array_push($json_data, $taskObject);
-        $new = json_encode($json_data);
+        $new = json_encode($json_data, JSON_PRETTY_PRINT);
         if (file_put_contents($file, $new) != false) {
           $message = 'Task Added !';
           $codeStatus = 1000;
@@ -31,7 +31,7 @@
       $json_data[$taskKey]['complete'] = ($_GET['checkstatus'] == 0) ? 1 : 0;
       $message = 'Updated';
       $codeStatus = 1002;
-      $new = json_encode($json_data);
+      $new = json_encode($json_data, JSON_PRETTY_PRINT);
       file_put_contents($file, $new);
     } else {
       $message = 'please type something !';
