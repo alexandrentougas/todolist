@@ -5,7 +5,6 @@
 ## Technologies used
 
 - PHP
-- SQL
 - HTML
 - CSS
 - JSON
