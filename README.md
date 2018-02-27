@@ -1,15 +1,5 @@
 # To Do List
 
-## Who did what?
-
-**Alexandre**
-
-- Set up the repo and local files
-- Write README file
-- Create form and basic JS
-
-**Dayvid**
-
 ## Technologies used
 
 - PHP
@@ -22,5 +12,9 @@
 
 ## Team members
 
-- Ntougas Alexandre
-- Astua Dayvid
+- Ntougas Alexandre[https://github.com/alexandrentougas]
+- Astua Dayvid[https://github.com/DayvidAstua]
+
+### With the help of
+
+- Hulstaert Laurent[https://github.com/laurenthu]
