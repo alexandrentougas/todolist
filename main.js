@@ -54,6 +54,7 @@ $(function() {
         }
         $('#todo, #done').text('');
         displayTasks(tasks['todolist']);
+        $('#task').val('');
       },
       error: function(result, status, error) {
         $('#error').text('Connection error');
@@ -125,7 +126,6 @@ $(function() {
 
   function addRequestEventListener() {
     document.getElementById('addTask').addEventListener('click', getValueAndSendIt);
-    $('#task').val() = '';
   }
 
   checkEntry();
