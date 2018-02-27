@@ -5,6 +5,21 @@
     <title></title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style media="screen">
+    #todo, #done {
+      min-height: 20px;
+    }
+    #todo div, #done div {
+      min-height: 20px;
+      cursor: move;
+      cursor: grab;
+      cursor: -moz-grab;
+      cursor: -webkit-grab;
+    }
+    #todo div:active, #done div:active {
+      cursor: grabbing;
+      cursor: -moz-grabbing;
+      cursor: -webkit-grabbing;
+    }
     .gu-mirror {
       position: fixed !important;
       margin: 0 !important;

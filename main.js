@@ -74,7 +74,30 @@ $(function() {
     addEventListenerOnTasks();
   };
 
-  dragula([document.querySelector('#todo'), document.querySelector('#done')]);
+  dragula([document.querySelector('#todo'), document.querySelector('#done')]).on('drop', function(el) {
+    let taskId = $(el).children('i').attr('id');
+    let checkStatus;
+    if ($(el).children('i').hasClass('fa-square-o')) {
+      checkStatus = 0;
+    } else {
+      checkStatus = 1;
+    };
+    $.ajax({
+      url: 'ajax.php',
+      type: 'GET',
+      data: 'id=' + taskId + '&checkstatus=' + checkStatus + '&action=update',
+      success: function(answer, status) {
+        let tasks = JSON.parse(answer);
+        $('#error').text(tasks['status']['message']);
+        $('#todo, #done').text('');
+        displayTasks(tasks['todolist']);
+      },
+      error: function(result, status, error) {
+        $('#error').text('Connection error');
+      }
+    });
+  });
+
 
   function displayCharsAndRestrictAdd() {
     let value = document.getElementById('task').value;
