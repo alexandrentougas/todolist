@@ -11,6 +11,7 @@
 - JSON
 - Javascript
 - jQuery
+- Heroku
 
 ## Team members
 
